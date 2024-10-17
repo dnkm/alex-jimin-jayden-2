@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+body {
+  background-color: #b4d9b6;
+}
+
+.area {
+  width: 80vw;
+  height: 30vh;
+  background-color: #fffbe0;
+  margin: auto;
+  transform: translateY(85%);
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.content-box {
+  display: flex; /* Enables horizontal scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  width: 100%;
+  height: 100%;
+  padding-top: 2vh; /* Adds space at the top for the text */
+}
+
+.item {
+  flex: 0 0 auto; /* Prevents items from shrinking */
+  width: 20vw;
+  height: 15vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px; /* Adds space between items */
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Ensures the image covers the entire area */
+}
+
+.feed {
+  width: 80vw;
+  height: 30vh;
+  background-color: #fffbe0;
+  margin: auto;
+  transform: translateY(150%); /* Adjusts the position lower on the screen */
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px; /* Adds space below the feed */
+}
+
+.feed-box {
+  display: flex; /* Enables horizontal scrolling */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  width: 100%;
+  height: 100%;
+  padding-top: 2vh; /* Adds space at the top for the text */
+}
+
+.post {
+  flex: 0 0 auto; /* Prevents items from shrinking */
+  width: 20vw;
+  height: 15vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px; /* Adds space between items */
+  text-align: center;
+}
+
+.post img {
+  width: 100%;
+  height: 70%; /* Adjust height for image */
+  border-radius: 10px;
+  object-fit: cover; /* Ensures the image covers the entire area */
+}
+
+.post p {
+  margin: 5px;
+  font-size: 12px;
+}
+
+.impact {
+  width: 80vw;
+  height: 30vh; /* Increased height to cover all the text */
+  background-color: #fffbe0;
+  margin: auto;
+  transform: translateY(250%); /* Adjusts the position lower on the screen */
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 15vh; /* Centers the text vertically */
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.impact-number {
+  color: green;
+}
+
+.invisible-space {
+  height: 500px; /* Adjust height to create space */
+}
+
+.header {
+  height: 10vh;
+  width: 30vw;
+  background-color: lightsalmon;
+  margin: auto;
+  transform: translateY(200%);
+  border-radius: 30px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 9vh;
+  border: 1px solid black;
+}
+
+.search-container {
+  height: 10vh;
+  width: 80vw;
+  border: 1px solid black;
+  background-color: #fffbe0;
+  border-radius: 20px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between; /* Ensures space between text and search button */
+  align-items: center;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-wrap: nowrap; /* Prevents wrapping */
+  overflow: hidden; /* Ensures no overflow */
+  z-index: 1000; /* Keeps the search bar on top */
+}
+
+.search {
+  background-color: #9dc183;
+  background-repeat: no-repeat; /* Prevents image duplication */
+  background-size: contain;
+  align-self: center;
+  border-radius: 30px;
+  width: 9vw;
+  height: 8vh;
+  margin: 5px;
+  padding: 5px;
+}
+
+.image-search {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/149/149852.png);
+  height: 8vh;
+  width: 8vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(8%, -15%);
+}
+
+.text {
+  font-size: 15px;
+  align-self: flex-start;
+  margin: 6px;
+  width: 50.4vw;
+}
+
+.nav {
+  width: 100vw;
+  height: 12.5vh;
+  background-color: #fffbe0;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: fixed;
+  bottom: -6px;
+  left: 50%; /* Position the left edge at the center of the screen */
+  transform: translateX(-50%); /* Move it back by half of its width */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  overflow: hidden; /* Ensures no overflow */
+  z-index: 1000; /* Keeps the navigation bar on top */
+}
+
+.button {
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.login,
+.home,
+.maps,
+.create,
+.chat {
+  width: 6.5vw; /* Adjust width as needed */
+  height: 10vh; /* Adjust height as needed */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+.login {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/2321/2321232.png);
+}
+.home {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/1946/1946488.png);
+}
+.create {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/992/992651.png);
+}
+.maps {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/684/684809.png);
+}
+.chat {
+  background-image: url(https://cdn-icons-png.flaticon.com/512/9446/9446889.png);
+}
+
+.text-links {
+  position: absolute;
+  top: -3.5px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  display: flex;
+  justify-content: flex-end; /* Aligns the links to the right */
+  align-items: center; /* Centers the links vertically */
+}
+
+.textlink a {
+  color: gray;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 10px; /* Sets the font size to 10px */
+  margin: 0 10px; /* Adds space between the links */
+}
+
+.textlink a:hover {
+  text-decoration: underline;
+}
