@@ -1,6 +1,6 @@
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/component/nav"
+import Navigation from "../components/nav";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,8 +14,8 @@ const noto = Noto_Sans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={noto.className}>
-      <body className="min-h-screen flex flex-col border-2 border-red-500">
-        <main className="flex-1 border-2 border-blue-500">{children}</main>
+      <body className="h-screen flex flex-col border-2">
+        <main className="flex-1 border-2 overflow-y-auto">{children}</main>
         <Navigation />
       </body>
     </html>

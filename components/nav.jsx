@@ -6,11 +6,13 @@ import { MdFileUpload } from "react-icons/md";
 
 export default function Navigation() {
     return (
-        <nav className="flex p-5 space-x-3 justify-evenly items-center text-3xl">
+        <nav className="w-full bg-white flex p-8 space-x-3 justify-evenly items-center text-3xl" style={{
+          boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.1)"
+        }}>
           <Link href="/">
             <FaHome />
           </Link>
-          <Link href="https://www.google.com/maps">
+          <Link href="/map">
             <FaMapMarkerAlt />
           </Link>
           <Link href="/create">
