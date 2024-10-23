@@ -4,7 +4,7 @@ import Link from "next/link";
 import { fake_cards, fake_tags } from "../data";
 import { useState } from "react";
 
-export default function () {
+export default function SearchPage() {
   let [selectTags, setSelectTags] = useState([]);
 
   function Click(tag) {

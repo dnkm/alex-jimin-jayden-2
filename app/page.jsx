@@ -7,7 +7,7 @@ import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Masonry from "react-responsive-masonry";
 
-export default function () {
+export default function MainPage () {
   let [selectTags, setSelectTags] = useState([]);
   let [searchTxt, setSearchTxt] = useState(""); // take this and put it through search right??
   let [showPopup, setShowPopup] = useState(false);
