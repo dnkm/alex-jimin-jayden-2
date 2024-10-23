@@ -20,8 +20,12 @@ export default function MapPage() {
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        <Marker lat={33.6684907} lng={-117.7563644}  />
-        <Marker lat={33.7029825} lng={-117.7121083}  />
+        <Marker lat={33.7545573} lng={-117.8706079} />
+<Marker lat={33.7519656} lng={-117.8721971} />
+<Marker lat={33.7026548} lng={-117.7841254} />
+<Marker lat={33.6944381} lng={-117.7772115} />
+<Marker lat={33.6684907} lng={-117.7563644} />
+<Marker lat={33.7029825} lng={-117.7121083} />
       </GoogleMapReact>
     </div>
   );
