@@ -277,4 +277,4 @@ export const fake_cards = [
     tags: ["large", "navy", "spring", "nylon", "sporty"],
     url: "https://i.imgur.com/zxHDbsJ.png",
   },
-];
+].map((v, i) => ({ ...v, id: i + 1 }));

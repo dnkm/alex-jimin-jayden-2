@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { fake_tags, fake_cards } from "./data";
 import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
@@ -82,48 +83,59 @@ export default function MainPage() {
 
       <div className="text-center">
         Our community has saved{" "}
-        <span className="text-xl font-bold">{fake_cards.length}</span> clothes from going to waste! 🌎
+        <span className="text-xl font-bold">{fake_cards.length}</span> clothes
+        from going to waste! 🌎
       </div>
 
-      {showProduct && ( 
-         <div className="fixed top-0 left-0 right-0 bottom-0 z-30 bg-white overflow-auto">
+      {showProduct && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 z-30 bg-white overflow-auto">
           <div className="flex justify-between text-xl font-bold p-3">
-           <button onClick={() => setShowProduct(false)}>{"<"}</button>
+            <button onClick={() => setShowProduct(false)}>{"<"}</button>
           </div>
           <div>
-          <img src={shownCards[productIndex].url} />
-      </div>
-      <div className="text-xl font-bold pl-5 p-3">{shownCards[productIndex].title}</div>
-      <div className="pl-5 pr-5">{shownCards[productIndex].description}</div>
-      <div className="pl-5 pr-5 p-4">{shownCards[productIndex].tags.join(", ")}</div>
-      <div className="flex pl-5 p-2">
-      <div className="flex items-center justify-center bg-neutral text-neutral-content w-8 h-8 rounded-full text-2xl bg-blue-500">D</div>
-             <div className="pl-3">Name</div>
-           </div>
-           </div>
-        
+            <img src={shownCards[productIndex].url} />
+          </div>
+          <div className="text-xl font-bold pl-5 p-3">
+            {shownCards[productIndex].title}
+          </div>
+          <div className="pl-5 pr-5">
+            {shownCards[productIndex].description}
+          </div>
+          <div className="pl-5 pr-5 p-4">
+            {shownCards[productIndex].tags.join(", ")}
+          </div>
+          <div className="flex pl-5 p-2">
+            <div className="flex items-center justify-center bg-neutral text-neutral-content w-8 h-8 rounded-full text-2xl bg-blue-500">
+              D
+            </div>
+            <div className="pl-3">Name</div>
+          </div>
+        </div>
       )}
 
       <Masonry columnsCount={2} gutter="15px">
         {shownCards.map((card, index) => (
-          <div key={index} className="rounded-2xl w-full overflow-hidden shadow-md">
-            <button onClick={() => {
-              setProductIndex(index);
-              setShowProduct(true);
-            }}>
+          <div
+            key={index}
+            className="rounded-2xl w-full overflow-hidden shadow-md"
+          >
+            <Link href={`/product/${card.id}`}>
               <img src={card.url} alt={card.title} />
               <div className="p-2 text-sm">
                 <div className="font-bold">{card.title}</div>
                 <div>{card.description}</div>
                 <div className="flex flex-wrap space-x-2 my-2">
                   {card.tags.map((t) => (
-                    <div className="bg-gray-100 rounded-lg px-1 py-0.5 text-xs font-bold" key={t}>
+                    <div
+                      className="bg-gray-100 rounded-lg px-1 py-0.5 text-xs font-bold"
+                      key={t}
+                    >
                       #{t}
                     </div>
                   ))}
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
         ))}
       </Masonry>
