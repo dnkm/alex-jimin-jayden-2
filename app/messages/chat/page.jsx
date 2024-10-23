@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import "./style.css";
+import { addMinutes, format, formatDistance } from "date-fns";
 
 let dylan_msgs = [
   { name: "Dylan", txt: "333" },
@@ -17,52 +18,61 @@ export default function Home() {
   let [message, setmessage] = useState("hi");
 
   let [msgs, setMsgs] = useState([
-    { name: "Dylan", txt: "I'm Dylan blah blah" },
-    { name: "me", txt: "ok hello" },
+    {
+      time: addMinutes(new Date(), -5),
+      name: "Dylan",
+      txt: "I'm Dylan blah blah",
+    },
+    { time: addMinutes(new Date(), -4), name: "me", txt: "ok hello" },
   ]);
 
   function onSubmit(ev) {
     ev.preventDefault();
-    let copy = [...msgs, { name: "me", txt: ev.target.textInput.value }];
+    let copy = [
+      ...msgs,
+      { time: new Date(), name: "me", txt: ev.target.textInput.value },
+    ];
 
     setMsgs(copy);
     ev.target.reset();
 
     setTimeout(() => {
-      setMsgs([...copy, dylan_msgs[dyi++]]);
+      setMsgs([...copy, { time: new Date(), ...dylan_msgs[dyi++] }]);
     }, 2000);
   }
 
   return (
-    <div>
-      <input type="text"></input>
-      <div class="flex justify-between">
+    <div className="mx-5 space-y-5">
+      <div className="flex justify-between text-xl font-bold">
         <Link href="/messages">{"<"}</Link>
         <div> Dylan </div>
         <div></div>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-5 text-sm">
         {msgs.map((msg, i) => (
           <div key={i}>
             {msg.name === "me" ? (
-              <div>
-                <div className="bg-green-100 flex justify-end box3 sb13">
+              <div className="flex items-end space-x-2">
+                <div className="text-xs text-gray-500">
+                  {format(msg.time, "h:mm aa")}
+                </div>
+                <div className="flex justify-end box3 rounded-xl rounded-tr-none p-3 pr-5">
                   {msg.txt}
                 </div>
               </div>
             ) : (
-              <div>
-                <div className="bg-blue-100">
-                  <div>{msg.name}</div>
-                  <div className="flex p-3">
-                    <div
-                      className="flex items-center justify-center bg-neutral text-neutral-content w-8 h-8 rounded-full text-2xl"
-                      style={{ backgroundColor: contactcolor }}
-                    >
-                      D
-                    </div>
-                    <div className="box3 sb14">{msg.txt}</div>
+              <div className="flex gap-2">
+                <div>
+                  <div
+                    className="flex items-center justify-center bg-neutral text-neutral-content w-8 h-8 rounded-full text-2xl"
+                    style={{ backgroundColor: contactcolor }}
+                  >
+                    D
                   </div>
+                </div>
+                <div className="space-y-2">
+                  <div>{msg.name}</div>
+                  <div className="box3 gray rounded-xl rounded-tl-none p-3 pl-5">{msg.txt}</div>
                 </div>
               </div>
             )}
