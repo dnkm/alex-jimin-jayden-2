@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={noto.className}>
       <body className="h-screen flex flex-col border-2">
-        <main className="flex-1 border-2 overflow-y-auto">{children}</main>
+        <main className="flex-1 border-2 overflow-y-auto flex flex-col">{children}</main>
         <Navigation />
       </body>
     </html>
