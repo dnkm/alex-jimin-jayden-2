@@ -6,7 +6,7 @@ import { MdFileUpload } from "react-icons/md";
 
 export default function Navigation() {
     return (
-        <nav className="w-full bg-white flex p-8 space-x-3 justify-evenly items-center text-3xl" style={{
+        <nav className="w-full bg-white flex p-4 space-x-3 justify-evenly items-center text-3xl" style={{
           boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.1)"
         }}>
           <Link href="/">
