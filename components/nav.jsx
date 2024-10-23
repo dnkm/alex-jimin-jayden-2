@@ -15,7 +15,7 @@ export default function Navigation() {
           <Link href="/map">
             <FaMapMarkerAlt />
           </Link>
-          <Link href="/create">
+          <Link href="/upload">
             <MdFileUpload />
           </Link>
           <Link href="/messages">

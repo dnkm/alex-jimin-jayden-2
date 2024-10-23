@@ -16,3 +16,8 @@ h1 {
 .bg-primary {
   background-color: var(--color-black);
 }
+
+.button-black {
+  @apply bg-primary text-white w-full rounded-full py-4 text-xl mt-5;
+
+}

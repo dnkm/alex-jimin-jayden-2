@@ -1,8 +1,16 @@
 import Link from "next/link";
+import { FaChevronLeft } from "react-icons/fa";
+import "./profile-style.css";
+
 export default function Home() {
   return (
-    <div>
-      <Link href="/profile/edit">edit</Link>
+    <div className="m-5 space-y-5">
+      <div>
+        <Link href="/">
+          <FaChevronLeft />
+        </Link>
+      </div>
+
       <div className="profile-container">
         <img
           src="https://via.placeholder.com/150"
@@ -11,9 +19,9 @@ export default function Home() {
         />
         <div className="profile-info">
           <h2>Alex Hwang</h2>
-          <p>desc</p>
+          <p>This is my bio!</p>
           <p>
-            <strong>Location:</strong> City, State
+            <strong>Location:</strong> Irvine, CA
           </p>
         </div>
         <div className="section">
@@ -30,16 +38,6 @@ export default function Home() {
             <li>Review of Shirt</li>
           </ul>
         </div>
-      </div>
-
-      <div className="nav">
-        <a href="" className="button home"></a>
-        <a href="https://google.com" className="button maps"></a>
-        <a href="" className="button create">
-          {" "}
-        </a>
-        <a href="https://google.com" className="button chat"></a>
-        <a href="src/routes/profile/page.svelte" className="button login"></a>
       </div>
     </div>
   );
