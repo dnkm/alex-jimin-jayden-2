@@ -301,7 +301,7 @@ export default function messages() {
   return (
     <div>
       {fake_contacts.map((contact, index) => (
-        <Link href="/messages/chat">
+        <Link href="/messages/chat" key={index}>
           <button className="flex items-center px-3 py-2 border w-full">
             <div className="flex items-center">
               <div

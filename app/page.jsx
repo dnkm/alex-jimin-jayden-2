@@ -50,7 +50,7 @@ export default function () {
           }}
         >
           <div
-            class="p-5 rounded-b-xl bg-white"
+            className="p-5 rounded-b-xl bg-white"
             onClick={(ev) => ev.stopPropagation()}
           >
             <div className="relative w-full">
@@ -98,9 +98,9 @@ export default function () {
         </button>
       </div>
 
-      <div class="text-center">
+      <div className="text-center">
         Our community has saved{" "}
-        <span class="text-xl font-bold">{fake_cards.length}</span> clothes from
+        <span className="text-xl font-bold">{fake_cards.length}</span> clothes from
         going to waste! 🌎
       </div>
 

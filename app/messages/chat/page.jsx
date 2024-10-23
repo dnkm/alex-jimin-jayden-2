@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div class="flex hidden">
+      <div className="flex hidden">
         <div>Dylan</div>
         <div>{fake_messages[0]}</div>
         <input value={message} onChange={(ev) => message(ev.target.value)} />
