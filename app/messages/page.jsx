@@ -3,10 +3,11 @@ import Link from "next/link";
 
 let fake_contacts = [
   {
+
     id: 1,
-    icon: "H",
+    icon: "Dylan",
     name: "hydrogen",
-    time: genRandomTime(),
+    time: newTi(),
     color: "#FFFFFF",
   }, // White
   {

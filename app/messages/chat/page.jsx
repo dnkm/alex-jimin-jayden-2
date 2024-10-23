@@ -52,7 +52,7 @@ export default function Home() {
         {msgs.map((msg, i) => (
           <div key={i}>
             {msg.name === "me" ? (
-              <div className="flex items-end space-x-2">
+              <div className="flex justify-end items-end space-x-2">
                 <div className="text-xs text-gray-500">
                   {format(msg.time, "h:mm aa")}
                 </div>
@@ -72,7 +72,13 @@ export default function Home() {
                 </div>
                 <div className="space-y-2">
                   <div>{msg.name}</div>
-                  <div className="box3 gray rounded-xl rounded-tl-none p-3 pl-5">{msg.txt}</div>
+                  <div className=" flex items-end" >
+                    <div className="box3 gray rounded-xl rounded-tl-none p-3 pl-5">{msg.txt}</div>
+                    <div className="text-xs text-gray-500">
+                    {format(msg.time, "h:mm aa")}
+                  </div>
+
+                  </div>
                 </div>
               </div>
             )}
@@ -93,7 +99,8 @@ export default function Home() {
       </div>
       <div>
         <form onSubmit={onSubmit}>
-          <input className="bg-black text-white" name="textInput" />
+          <input className="box3 gray rounded-xl p-2 pl-3 pr-3 w-11/12  " name="textInput" />
+          <button> {">"}</button>
         </form>
       </div>
     </div>
