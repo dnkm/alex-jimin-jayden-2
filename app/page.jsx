@@ -75,7 +75,7 @@ export default function MainPage() {
       )}
 
       <div className="flex justify-between items-center text-4xl font-bold">
-        <div>AJJ</div>
+        <div>ReWear</div>
         <button onClick={() => setShowPopup(true)}>
           <FaMagnifyingGlass />
         </button>
